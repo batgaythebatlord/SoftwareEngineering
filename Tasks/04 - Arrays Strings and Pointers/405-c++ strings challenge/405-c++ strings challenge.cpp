@@ -25,12 +25,18 @@ int main()
 
     // Challenge 2 - word count
     // Type in a sentence, and count the number of time the words "the" appears 
+    cout << "Challenge 2" << endl;
     getline(std::cin, input);   //Read a line (users types this in)
     istringstream iss(input);   //Create a string "stream" (sequence of words)
     string word;                //This will hold the next word
+    int theCount = 0;
     while (iss >> word) {       //Read the next word (if there is one)
+        if ((word == "the") || (word == "The"))
+        {
+            theCount++;
+        }
         cout << word << endl;   //Output each word in turn
     }
-
+    cout << "\nNumber of \"the\"s is " << theCount << endl;
 }
 
