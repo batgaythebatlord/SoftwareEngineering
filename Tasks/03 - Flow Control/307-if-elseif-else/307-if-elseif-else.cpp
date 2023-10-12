@@ -26,7 +26,8 @@ int main()
 
     //Read the keyboad to get the level
     //Repeat until a valid value has been added
-    do {
+    do 
+    {
         cout << "Please enter a level (between 0 and 100)" << endl;
         cin >> level;
     } while ((level < 0) || (level > 100)); //Repeat until a valid number is entered
@@ -35,16 +36,25 @@ int main()
     if (level == 0) 
     {
         cout << "Tank is empty. It needs filling." << endl;
-    } 
-    else if (level <= low)                       // check the level
-    {
-        cout << "Tank is low and needs filling." << endl;
     }
-    else if (level < high) 
+    else if ((level > 0) && (level <= 5))
     {
-        cout << "Tank has sufficient fuel" << endl;
+        cout << "Tank has a dangerously low fuel level." << endl;
     }
-    else {
+    else if ((level > 5) && (level <= 30))                       // check the level
+    {
+        cout << "Tank has a low fuel level." << endl;
+    }
+    else if ((level > 30) && (level <= 70))
+    {
+        cout << "Tank has a medium fuel level." << endl;
+    }
+    else if ((level > 70) && (level <= 95))
+    {
+        cout << "Tank has a high fuel level." << endl;
+    }
+    else 
+    {
         cout << "Tank is full" << endl;
     }
 }
