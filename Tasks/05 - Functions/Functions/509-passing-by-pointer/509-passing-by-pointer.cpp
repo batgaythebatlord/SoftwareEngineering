@@ -11,6 +11,7 @@ struct Point {
 //Function prototypes
 void displayPoint(Point p);
 float calculateLength(Point p);
+void calculateLengthPointer(Point* p);
 void flipPoint(Point* p);
 Point addPoint(Point p1, Point p2);
 
@@ -45,6 +46,14 @@ float calculateLength(Point p)
     float h = sqrt(p.x * p.x + p.y * p.y);
     //p.length = h; //This would be pointless as p is a copy
     return h;
+}
+
+void calculateLengthPointer(Point* p)
+{
+    float h = sqrt(p->x * p->x + p->y * p->y);
+    p->length = h;
+    //p.length = h; //This would be pointless as p is a copy
+    
 }
 
 // Swap the x and y coordinates of p inplace
