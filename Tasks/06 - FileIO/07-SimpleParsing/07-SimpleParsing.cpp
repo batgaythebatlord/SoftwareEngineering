@@ -40,7 +40,16 @@ int main()
     //Display the result
     cout << "Subject Area is " << subjectArea << endl;
 
+    for (unsigned int n = 0; n < 2; n++) {
+        inputStream >> nextWord;
+    }
     int code;
+    inputStream >> code;
+
+    cout << "Module ID is " << code << endl;
+
+
+    cout << "The next module string is " << subjectArea << code + 1 << endl;
 
     //TO DO: 
     // Now find the module ID number

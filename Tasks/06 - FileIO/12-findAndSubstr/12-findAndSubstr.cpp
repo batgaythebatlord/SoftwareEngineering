@@ -11,7 +11,7 @@ int readFileIntoString(string fn, string& allLines);
 int main()
 {
     // Let's create a file for test purposes
-    createFile("myfile.txt");
+    //createFile("myfile.txt");
 
     // String to hold file content
     string dataString;
@@ -63,6 +63,22 @@ int main()
         cout << "That broke. Time for coffee" << endl;
         return -1;
     }
+
+    pos = dataString.find("Area:");
+    if (pos == -1) {
+        cerr << "Identifier Area: is missing from file" << endl;
+        return -1;
+    }
+
+    following = dataString.substr(pos);
+
+    istringstream iss2(following);
+    iss2 >> strTag >> strCode;
+    if (iss2.fail()) {
+        cerr << "Could not locate subject group" << endl;
+        return -1;
+    }
+    cout << "Subject group is " << strCode << endl;
 
     // Done
     cout << "All is well!" << endl;

@@ -11,7 +11,7 @@ int readFileIntoString(string fn, string& allLines);
 int main()
 {
     // Let's create a file for test purposes
-    createFile("myfile.txt");
+    //createFile("myfile.txt");
 
     // String to hold file content
     string dataString;
@@ -47,6 +47,19 @@ int main()
             //TODO:
             // Read the next word
             // If successful, try to convert to an integer then break from the while loop
+
+            iss >> nextWord;
+            if (iss.fail()) {
+                //Jump to the end of the while loop
+                continue;
+            }
+
+            int num = stoi(nextWord);
+            cout << num << endl;
+
+            cout << "New code!" << endl;
+            cout << num + 1 << "." << endl;
+            break;
         }
     }
 
