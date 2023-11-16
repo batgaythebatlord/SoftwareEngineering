@@ -85,6 +85,13 @@ namespace COMP1000 {
             }
         }
 
+        void updateArea(int w, int h)
+        {
+            width = w;
+            height = h;
+            area = width * height;
+        }
+
         // Output to terminal
         void display() {
             cout << fileName << ", Width: " << width << ", Height: " << height << ", Area: " << area << endl;
